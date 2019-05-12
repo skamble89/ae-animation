@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>After Effects animation</title>
+    <style type="text/css">
+        #anim {
+            width: 200px;
+            height: 200px;
+            border: 1px solid black;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    </style>
+</head>
+
+<body>
+    <div id="anim"></div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bodymovin/5.5.2/lottie.min.js"></script>
+    <script>
+        var container = document.getElementById('anim');
+        var anim = lottie.loadAnimation({
+            container: container,
+            renderer: 'svg',
+            loop: false,
+            autoplay: false,
+            path: 'data.json'
+        });
+
+        container.addEventListener('mouseover', function () {
+            anim.play();
+        });
+
+        container.addEventListener('mouseout', function () {
+            anim.pause();
+        });
+
+        anim.addEventListener('complete', function () {
+            anim.stop();
+        });
+    </script>
+</body>
+
+</html>
