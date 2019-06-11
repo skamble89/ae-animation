@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Locusnine Animated Logo</title>
+</head>
+
+<body>
+    <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
+        xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
+        xmlns="http://www.w3.org/2000/svg" id="svg8" version="1.1" viewBox="0 0 148 148" height="148mm" width="148mm">
+        <defs id="defs2" />
+        <metadata id="metadata5">
+            <rdf:RDF>
+                <cc:Work rdf:about="">
+                    <dc:format>image/svg+xml</dc:format>
+                    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+                    <dc:title></dc:title>
+                </cc:Work>
+            </rdf:RDF>
+        </metadata>
+        <g transform="translate(0,-148.99992)" id="layer1">
+            <path id="diagonal" d="M -247.5355339,543.1856 -106.18568,402.53546"
+                style="fill:none;stroke:#0000ff;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+            <path id="left" d="M 23.860608,272.86053 v -0"
+                style="fill:none;stroke:#0000ff;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+            <path
+                style="fill:none;stroke:#0000ff;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                d="M 123.86061,172.86053 v 0" id="right" />
+            <path id="top" d="M 18.843946,172.7841 h 0"
+                style="fill:none;stroke:#0000ff;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1" />
+            <path
+                style="fill:none;stroke:#0000ff;stroke-width:10;stroke-linecap:butt;stroke-linejoin:miter;stroke-opacity:1"
+                d="M128.855939999999975,272.8606 h 0" id="bottom" />
+        </g>
+    </svg>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.5.1/snap.svg-min.js"></script>
+    <script>
+        (function () {
+            var svg = Snap('#svg8');
+            var layer1 = svg.select('#layer1');
+            var left = layer1.select('#left');
+            var top = layer1.select('#top');
+            var right = layer1.select('#right');
+            var bottom = layer1.select('#bottom');
+            var diagonal = layer1.select('#diagonal');
+
+            left.animate({
+                d: 'M 23.860608,272.86053 v -100'
+            }, 250, mina.easein, function () {
+                top.animate({
+                    d: 'M 18.843946,172.7841 h 110'
+                }, 250, mina.easein, function () {
+                    right.animate({
+                        d: 'M 123.86061,172.86053 v 100'
+                    }, 250, mina.easein, function () {
+                        bottom.animate({
+                            d: 'M128.855939999999975,272.8606 h -110'
+                        }, 250, mina.easein, function () {
+                            diagonal.animate({
+                                d: 'M 3.5355339,293.1856 144.18568,152.53546'
+                            }, 250, mina.easein, function () {
+                                console.log('done!!')
+                            });
+                        });
+                    });
+                });
+            });
+        })();
+    </script>
+</body>
+
+</html>
