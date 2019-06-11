@@ -48,27 +48,29 @@
             var bottom = layer1.select('#bottom');
             var diagonal = layer1.select('#diagonal');
 
-            left.animate({
-                d: 'M 23.860608,272.86053 v -100'
-            }, 250, mina.easein, function () {
-                top.animate({
-                    d: 'M 18.843946,172.7841 h 110'
-                }, 250, mina.easein, function () {
-                    right.animate({
-                        d: 'M 123.86061,172.86053 v 100'
-                    }, 250, mina.easein, function () {
-                        bottom.animate({
-                            d: 'M128.855939999999975,272.8606 h -110'
-                        }, 250, mina.easein, function () {
-                            diagonal.animate({
-                                d: 'M 3.5355339,293.1856 144.18568,152.53546'
-                            }, 250, mina.easein, function () {
-                                console.log('done!!')
+            setTimeout(function () {
+                left.animate({
+                    d: 'M 23.860608,272.86053 v -100'
+                }, 250, mina.linear, function () {
+                    top.animate({
+                        d: 'M 18.843946,172.7841 h 110'
+                    }, 250, mina.linear, function () {
+                        right.animate({
+                            d: 'M 123.86061,172.86053 v 100'
+                        }, 250, mina.linear, function () {
+                            bottom.animate({
+                                d: 'M128.855939999999975,272.8606 h -110'
+                            }, 250, mina.linear, function () {
+                                diagonal.animate({
+                                    d: 'M 3.5355339,293.1856 144.18568,152.53546'
+                                }, 250, mina.linear, function () {
+                                    console.log('done!!')
+                                });
                             });
                         });
                     });
                 });
-            });
+            }, 500);
         })();
     </script>
 </body>
